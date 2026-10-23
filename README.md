@@ -8,19 +8,19 @@ O projeto foi estruturado a partir dos conceitos apresentados no vídeo [8 REST 
 
 ## 📑 Sumário Executivo da Documentação
 
-A documentação detalhada foi dividida em módulos temáticos dentro do diretório [`docs/`](file:///Users/samukadev/Documents/GitHub/api-scaffold/docs/):
+A documentação detalhada foi dividida em módulos temáticos dentro do diretório [`docs/`](docs/):
 
 | # | Padrão Arquitetural | Documento Detalhado | Descrição Resumida |
 | :-: | :--- | :--- | :--- |
-| **01** | **Design Orientado a Recursos** | [`01-resource-oriented-design.md`](file:///Users/samukadev/Documents/GitHub/api-scaffold/docs/01-resource-oriented-design.md) | Desenhe em torno de substantivos (`/orders`), nunca ações/verbos (`/createOrder`). O método HTTP dita a ação; a URL identifica o recurso. |
-| **02** | **URLs Previsíveis e Hierarquia** | [`02-predictable-urls-hierarchy.md`](file:///Users/samukadev/Documents/GitHub/api-scaffold/docs/02-predictable-urls-hierarchy.md) | Estrutura consistente (`/{collection}/{id}/{sub}`), plural sempre, `kebab-case`, e aninhamento raso (*shallow nesting* $\le 2$ níveis). |
-| **03** | **Semântica dos Métodos HTTP** | [`03-http-methods-semantics.md`](file:///Users/samukadev/Documents/GitHub/api-scaffold/docs/03-http-methods-semantics.md) | Uso real de `GET`, `POST`, `PUT`, `PATCH`, `DELETE`. Matriz de Métodos Seguros (*Safe*) vs Idempotentes (*Idempotent*). |
-| **04** | **Status Codes Significativos** | [`04-meaningful-status-codes.md`](file:///Users/samukadev/Documents/GitHub/api-scaffold/docs/04-meaningful-status-codes.md) | Eliminação definitiva do falso `200 OK com erro no body`. Catálogo de 2xx, 4xx e 5xx, e fluxograma de decisão. |
-| **05** | **Padronização de Erros (RFC 7807)** | [`05-standardized-error-handling.md`](file:///Users/samukadev/Documents/GitHub/api-scaffold/docs/05-standardized-error-handling.md) | A tríade de erro (Usuário, Aplicação, SRE), especificação Problem Details, `code` para máquina e validação múltipla (422). |
-| **06** | **Query Parameters, Filtros & Paginação** | [`06-query-params-filtering-pagination.md`](file:///Users/samukadev/Documents/GitHub/api-scaffold/docs/06-query-params-filtering-pagination.md) | Três responsabilidades claras (Path identifica, Query refina, Método opera). Filtros, busca, ordenação e paginação por cursor. |
-| **07** | **Versionamento e Evolução Sem Quebras** | [`07-api-versioning-evolution.md`](file:///Users/samukadev/Documents/GitHub/api-scaffold/docs/07-api-versioning-evolution.md) | Estratégias de versionamento (`/v1/`, Headers), mudanças quebrantes (*breaking changes*) e cabeçalhos `Deprecation` e `Sunset`. |
-| **08** | **Idempotência & Resiliência** | [`08-idempotency-and-resilience.md`](file:///Users/samukadev/Documents/GitHub/api-scaffold/docs/08-idempotency-and-resilience.md) | Chaves de idempotência (`Idempotency-Key`) contra cobranças duplicadas, tarefas assíncronas com `202 Accepted` e rate limiting. |
-| **⭐** | **Guia Prático & Checklist** | [`checklist-guia-pratico.md`](file:///Users/samukadev/Documents/GitHub/api-scaffold/docs/checklist-guia-pratico.md) | As 8 perguntas essenciais para arquitetar qualquer API e checklist completo para aprovação de Pull Requests. |
+| **01** | **Design Orientado a Recursos** | [`01-resource-oriented-design.md`](docs/01-resource-oriented-design.md) | Desenhe em torno de substantivos (`/orders`), nunca ações/verbos (`/createOrder`). O método HTTP dita a ação; a URL identifica o recurso. |
+| **02** | **URLs Previsíveis e Hierarquia** | [`02-predictable-urls-hierarchy.md`](docs/02-predictable-urls-hierarchy.md) | Estrutura consistente (`/{collection}/{id}/{sub}`), plural sempre, `kebab-case`, e aninhamento raso (*shallow nesting* $\le 2$ níveis). |
+| **03** | **Semântica dos Métodos HTTP** | [`03-http-methods-semantics.md`](docs/03-http-methods-semantics.md) | Uso real de `GET`, `POST`, `PUT`, `PATCH`, `DELETE`. Matriz de Métodos Seguros (*Safe*) vs Idempotentes (*Idempotent*). |
+| **04** | **Status Codes Significativos** | [`04-meaningful-status-codes.md`](docs/04-meaningful-status-codes.md) | Eliminação definitiva do falso `200 OK com erro no body`. Catálogo de 2xx, 4xx e 5xx, e fluxograma de decisão. |
+| **05** | **Padronização de Erros (RFC 7807)** | [`05-standardized-error-handling.md`](docs/05-standardized-error-handling.md) | A tríade de erro (Usuário, Aplicação, SRE), especificação Problem Details, `code` para máquina e validação múltipla (422). |
+| **06** | **Query Parameters, Filtros & Paginação** | [`06-query-params-filtering-pagination.md`](docs/06-query-params-filtering-pagination.md) | Três responsabilidades claras (Path identifica, Query refina, Método opera). Filtros, busca, ordenação e paginação por cursor. |
+| **07** | **Versionamento e Evolução Sem Quebras** | [`07-api-versioning-evolution.md`](docs/07-api-versioning-evolution.md) | Estratégias de versionamento (`/v1/`, Headers), mudanças quebrantes (*breaking changes*) e cabeçalhos `Deprecation` e `Sunset`. |
+| **08** | **Idempotência & Resiliência** | [`08-idempotency-and-resilience.md`](docs/08-idempotency-and-resilience.md) | Chaves de idempotência (`Idempotency-Key`) contra cobranças duplicadas, tarefas assíncronas com `202 Accepted` e rate limiting. |
+| **⭐** | **Guia Prático & Checklist** | [`checklist-guia-pratico.md`](docs/checklist-guia-pratico.md) | As 8 perguntas essenciais para arquitetar qualquer API e checklist completo para aprovação de Pull Requests. |
 
 ---
 
@@ -57,7 +57,7 @@ A documentação detalhada foi dividida em módulos temáticos dentro do diretó
 
 ## 🧪 Servidor de Demonstração em Código
 
-O projeto conta com um servidor funcional em [`src/index.ts`](file:///Users/samukadev/Documents/GitHub/api-scaffold/src/index.ts) construído sobre o runtime nativo do **Bun**, exemplificando todos os padrões em tempo real.
+O projeto conta com um servidor funcional em [`src/index.ts`](src/index.ts) construído sobre o runtime nativo do **Bun**, exemplificando todos os padrões em tempo real.
 
 ### Executando Localmente
 
@@ -108,4 +108,4 @@ Uma boa API deve ser:
 - **Resiliente:** Lida de forma graciosa com erros de rede, retentativas e concorrência.
 - **Evolutiva:** Permite que novas funcionalidades sejam adicionadas sem quebrar clientes que já estão em produção.
 
-Para aprofundar em cada conceito, consulte os documentos detalhados na pasta [`docs/`](file:///Users/samukadev/Documents/GitHub/api-scaffold/docs/).
+Para aprofundar em cada conceito, consulte os documentos detalhados na pasta [`docs/`](docs/).
